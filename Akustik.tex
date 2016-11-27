@@ -14,6 +14,7 @@
 % Document Class ===============================================================
 \documentclass[fs, footer]{latex4ei}
 
+\usepackage{latex4ei_unicode}
 \usepackage{multirow}
 
 \usepackage[mathletters]{ucs}
@@ -58,6 +59,7 @@
 
 \fstitle{Akustik}
 % =====================================================================
+
 
 
 
@@ -573,6 +575,10 @@ $n_x,n_y,n_z \in \N_0$
 {\huge \bfseries Technische Akustik}\\[0.5em]
 
 
+\emphbox{ \textbf{HINWEIS}: Die Formelsammlung ist bisher noch eine einfache Mitschrift, teilweise
+ungeordnet und kann grobe Fehler enthalten. }
+
+
 \sectionbox{
 	\subsection{Was ist Lärm}
 	Disco, Kegelbahn, Flugzeug, Motorrad\\
@@ -820,9 +826,15 @@ $n_x,n_y,n_z \in \N_0$
 }
 
 \sectionbox{
+	\subsection{Resonatoren}
+	$\frac{λ}{4}$-Resonator: $f = \frac{c}{l} \left( \frac14 + n \frac12 \right)$\\
+	$\frac{λ}{2}$-Resonator: $f = \frac{c}{l} \left( \frac12 + n \frac12 \right)$\\	
+}
+
+\sectionbox{
 	\subsection{Helmholtz-Resonator}
 	Ein Helmholtz-Resonator besteht aus einem Luftvolumen in beliebiger Form, das einen zylindrischen engeren kurzen Hals mit einer Öffnung nach außen besitzt.
-	$$f = \frac{c}{2π} \sqrt{\frac{S_{\ir Offnung}}{V_{\ir Bauch} \left(l_{\ir Hals} ⋅ \frac{π}{2} ⋅ r_{\ir Hals} \right)}}$$
+	$$f = \frac{c}{2π} \sqrt{\frac{S_{\ir Offnung}}{V_{\ir Bauch} \left(l_{\ir Hals} \cdot \frac{π}{2} \cdot r_{\ir Hals} \right)}}$$
 }
 
 \sectionbox{
@@ -835,13 +847,15 @@ $n_x,n_y,n_z \in \N_0$
 	
 	\subsection{Absorbierte Welle}
 	Absorbtionsgrad $α = \frac{\abs{p_{\ir in}}^2 - \abs{p_{\ir ref}}^2}{\abs{p_{\ir in}}^2} = 1 - \abs{r}^2$\\
-	
 }
+
 
 \sectionbox{
     \subsection{Plattenresonator}
-	$Z = w'' + \j(ωm'' - \frac{Z_0}{ωd})$\\
+    $f = \frac{c}{2π} \sqrt{\frac{ρ_{\ir Luft}}{ρ_{\ir Platte} \cdot D \cdot d}}$\\
+	$Z = w'' + \j(ωm'' - \frac{Z_0}{ωd})$
 }
+
 
 \sectionbox{
     \subsection{Schallwellen}
@@ -1016,7 +1030,7 @@ $T_N = -\frac{24 \ln(10)}{c} \cdot \frac{V}{S - \ln(1-\ol \alpha)}$
     \subsection{Drehkörper}
     Hellikopter, Ventilator\\
     Bei stationären Schallen einfach, bei impulshaften Schallen tradeoff:
-    Unschärfe bei DFT $Δf ⋅ T_{ein} = 1$
+    Unschärfe bei DFT $Δf \cdot T_{ein} = 1$
 	Bei 200ms Schall, 5Hz Auflösung\\
 	
 	Mehr Lüfterblätter oder größere Fläche, reduziert Lärm.\\
@@ -1152,10 +1166,10 @@ $T_N = -\frac{24 \ln(10)}{c} \cdot \frac{V}{S - \ln(1-\ol \alpha)}$
 			erkennbar an dem „blauen Umweltengel“\\
 		
 		Was sind $\SI{90}{dB}$ Leistungspegel?\\
-		$P= I ⋅ S$, $L_W = 10 \log \frac{P_A}{P_0} dB$ \quad $P_0 = \SI{e-12}{W}$\\
+		$P= I \cdot S$, $L_W = 10 \log \frac{P_A}{P_0} dB$ \quad $P_0 = \SI{e-12}{W}$\\
 		$P_A = 10^{\frac{90}{10}} \cdot \SI{e-12}{W} =\SI{e-3}{W}$\\
 		In 10m Abstand?\\
-		$S = 4πr^2 = 4 ⋅ π 100m^2 \approx 1200m^2$\\
+		$S = 4πr^2 = 4 \cdot π 100m^2 \approx 1200m^2$\\
 		$I_{A,10m} \approx \frac{\SI{e-3}{W}}{\SI{e3}{m^2}} = \SI{e-6}{\watt\per\meter\squared}$\\ 
 		$L_{A,10m} = 10 \log \frac{I_{A,10m}}{I_0} = 10 \log \frac{\num{e-6}}{\num{e-12}} = \SI{60}{dB(A)}$\\
 		
